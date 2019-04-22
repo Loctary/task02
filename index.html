@@ -12,7 +12,7 @@
 <body>
     <script type="text/javascript">
         function changeCss () {
-            let bodyElement = document.getElementsByClassName("heading")[0];
+            let bodyElement = document.getElementsByTagName('header')[0];
             this.scrollY > 100 
             ? bodyElement.style.backgroundColor = '#0b2a37' 
             : bodyElement.style.backgroundColor = 'transparent';
@@ -22,7 +22,7 @@
     </script>
     <header>
         <div class="container">
-            <div class="heading">
+            <!--<div class="heading">-->
                 <img src="img/logo-228.png" alt="logo">
                 <a href="#" class="hide"><b>?</b> Help Center</a>
                 <a href="#" class="hide">Call Us</a>
@@ -33,16 +33,25 @@
                         <li id="menu"><a href="#"><div></div>Menu</a></li>
                     </ul>
                 </nav>
-            </div>
-            <div class="content">
+            <!--</div>-->
+
+            <!--<div class="content">
                 <h1>Znajdź  opiekuna</h1>
                 <h2>dla swoich najbliższych</h2>
                 <p>Skontaktuj się bezpośrednio z jedną z <b>60,000 zarejestrowanych </b><br>opiekunek</p>
                 <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
-            </div>
+            </div>-->
             
         </div>
     </header>
+    <section id="content">
+        <div class="container">
+            <h1>Znajdź  opiekuna</h1>
+            <h2>dla swoich najbliższych</h2>
+            <p>Skontaktuj się bezpośrednio z jedną z <b>60,000 zarejestrowanych </b><br>opiekunek</p>
+            <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
+        </div>
+    </section>
     <section id='search-top' class="wow bounceInLeft">
         <div class="container" >
             <div class="descr">Want to care with Geriana?</div>
