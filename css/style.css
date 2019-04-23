@@ -1,6 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900&subset=latin-ext';
 @import 'https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d';
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900&subset=latin-ext");
 header > .container, #content > .container, #search-top > .container, #specialists > .container, #bg1 > .container, #how-it-works > .container, #bg2 > .container, #recalls > .container, #bg3 > .container, #our-preferences .container, #call-us > .container, footer > .container {
   min-height: inherit;
   max-width: 1440px;
@@ -194,11 +193,11 @@ header {
             }
         }*/ }
     header > .container img {
-      margin: 0 20px; }
+      margin: 0; }
     header > .container > .nav {
       margin-left: auto; }
       header > .container > .nav ul {
-        padding-right: 20px;
+        padding-right: 50px;
         display: inline; }
         header > .container > .nav ul #menu {
           margin-left: 50px; }

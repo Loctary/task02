@@ -41,13 +41,13 @@ header {
         align-items: center;
         transition: all 0.3s;
         img {
-            margin: 0 20px;
+            margin: 0;
             
         }
         &>.nav {
             margin-left: auto;
             ul {
-                padding-right: 20px;
+                padding-right: 50px;
                 display: inline;
                 #menu {
                     margin-left: 50px;
