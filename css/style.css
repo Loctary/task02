@@ -3,7 +3,7 @@
 header > .container, #content > .container, #search-top > .container, #specialists > .container, #bg1 > .container, #how-it-works > .container, #bg2 > .container, #recalls > .container, #bg3 > .container, #our-preferences .container, #call-us > .container, footer > .container {
   min-height: inherit;
   max-width: 1440px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0; }
 
 html, body {
