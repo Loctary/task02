@@ -1,0 +1,30 @@
+{
+  "name": "task02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loctary/task02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Loctary/task02/issues"
+  },
+  "homepage": "https://github.com/Loctary/task02#readme",
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-sass": "0.0.31",
+    "@types/node-sass": "^4.11.0",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

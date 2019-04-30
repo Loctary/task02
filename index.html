@@ -10,7 +10,7 @@
     <script src="js/wow.min.js"></script>
 </head>
 <body>
-    <script type="text/javascript">
+    <script>
         function changeCss () {
             let bodyElement = document.getElementsByTagName('header')[0];
             this.scrollY > 100 
@@ -22,29 +22,19 @@
     </script>
     <header>
         <div class="container">
-            <!--<div class="heading">-->
-                <img src="img/logo-228.png" alt="logo">
-                <a href="#" class="hide"><b>?</b> Help Center</a>
-                <a href="#" class="hide">Call Us</a>
-                <nav class="nav">
-                    <ul>
-                        <li class="hide1"><a href="#" >Sign Up</a></li>
-                        <li class="hide1"><a href="#" >Log In</a></li>
-                        <li id="menu"><a href="#"><div></div>Menu</a></li>
-                    </ul>
-                </nav>
-            <!--</div>-->
-
-            <!--<div class="content">
-                <h1>Znajdź  opiekuna</h1>
-                <h2>dla swoich najbliższych</h2>
-                <p>Skontaktuj się bezpośrednio z jedną z <b>60,000 zarejestrowanych </b><br>opiekunek</p>
-                <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
-            </div>-->
-            
+            <img src="img/logo-228.png" alt="logo" class="img">
+            <a href="#" class="hide"><b>?</b> Help Center</a>
+            <a href="#" class="hide">Call Us</a>
+            <nav class="nav">
+                <ul>
+                    <li class="hide1"><a href="#" >Sign Up</a></li>
+                    <li class="hide1"><a href="#" >Log In</a></li>
+                    <li class="menu"><a href="#"><div></div>Menu</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <section id="content">
+    <section class="content">
         <div class="container">
             <h1>Znajdź  opiekuna</h1>
             <h2>dla swoich najbliższych</h2>
@@ -52,52 +42,59 @@
             <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
         </div>
     </section>
-    <section id='search-top' class="wow bounceInLeft">
+    <section class="search-top wow bounceInLeft">
         <div class="container" >
-            <div class="descr">Want to care with Geriana?</div>
+            <h4>Want to care with Geriana?</h4>
             <a href="#">Become a Caregiver</a>
         </div>
     </section>
-    <section id="specialists">
+    <section class="specialists">
         <div class="container">
             <h3>Specjaliści Różnych Kategorii</h3>
             <div class="services">
-                <div class="col wow bounceInUp">
-                    <img src="img/icon-1.png">
-                    <h4>Opiekunowie z doświadczeniem</h4>
-                    <div class="descr">10,000 zarejestrowanych opiekunów<br> 
-                        czeka na bezpośredni kontakt<br> 
-                        z poszukującymi opieki</div>
-                </div>
-                <div class="col wow bounceInUp">
-                    <img src="img/icon-2.png">
-                    <h4>Masażyści</h4>
-                    <div class="descr">10,000 zarejestrowanych opiekunów<br> 
-                        czeka na bezpośredni kontakt<br> 
-                        z poszukującymi opieki</div>
-                </div>
-                <div class="col wow bounceInUp">
-                    <img src="img/icon-3.png">
-                    <h4>Pielęgniarki i opiekunowie
-                            medyczni</h4>
-                    <div class="descr">10,000 zarejestrowanych opiekunów<br> 
-                        czeka na bezpośredni kontakt<br> 
-                        z poszukującymi opieki</div>
-                </div>
-                <div class="col wow bounceInUp">
-                    <img src="img/icon-4.png">
-                    <h4>Fizjoterapeuci</h4>
-                    <div class="descr">10,000 zarejestrowanych opiekunów<br> 
-                        czeka na bezpośredni kontakt<br> 
-                        z poszukującymi opieki</div>
-                </div>
+                <figure class="col wow bounceInUp">
+                    <img src="img/icon-1.png" alt="Opiekunowie z doświadczeniem">
+                    <figcaption>
+                        <h4>Opiekunowie z doświadczeniem</h4>
+                        <p>10,000 zarejestrowanych opiekunów<br> 
+                            czeka na bezpośredni kontakt<br> 
+                            z poszukującymi opieki</p>
+                    </figcaption>
+                </figure>
+                <figure class="col wow bounceInUp">
+                    <img src="img/icon-2.png" alt="Masażyści">
+                    <figcaption>
+                        <h4>Masażyści</h4>
+                        <p>10,000 zarejestrowanych opiekunów<br> 
+                            czeka na bezpośredni kontakt<br> 
+                            z poszukującymi opieki</p>
+                    </figcaption>
+                </figure>
+                <figure class="col wow bounceInUp">
+                    <img src="img/icon-3.png" alt="Pielęgniarki i opiekunowiemedyczni">
+                    <figcaption>
+                        <h4>Pielęgniarki i opiekunowie
+                                medyczni</h4>
+                        <p>10,000 zarejestrowanych opiekunów<br> 
+                            czeka na bezpośredni kontakt<br> 
+                            z poszukującymi opieki</p>
+                    </figcaption>
+                </figure>
+                <figure class="col wow bounceInUp">
+                    <img src="img/icon-4.png" alt="Fizjoterapeuci">
+                    <figcaption>
+                        <h4>Fizjoterapeuci</h4>
+                        <p>10,000 zarejestrowanych opiekunów<br> 
+                            czeka na bezpośredni kontakt<br> 
+                            z poszukującymi opieki</p>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>
-    <section id="bg1" class="wow bounceInLeft">
-            <div class="container"></div>
-    </section>
-    <section id="how-it-works">
+    <div class="bg1 wow bounceInLeft">
+    </div>
+    <section class="how-it-works">
         <div class="container">
             <div class="left">
                 <h1 class="wow bounceInLeft">Jak Działamy dla Poszukujących Opieki</h1>
@@ -105,7 +102,7 @@
             </div>
             <div class="right">
                 <div class="row">
-                    <img src="img/icon-5.png " class="wow bounceInUp">
+                    <img src="img/icon-5.png " alt="zoom" class="wow bounceInUp">
                     <div class="wow bounceInUp">
                         <h5>Search a Caregiver</h5>
                         <p>Ustalasz kryteria wyboru i 
@@ -115,7 +112,7 @@
                     <span class="wow zoomInRight"></span>
                 </div>
                 <div class="row">
-                    <img src="img/icon-6.png" class="wow bounceInUp">
+                    <img src="img/icon-6.png" alt="arrow" class="wow bounceInUp">
                     <div class="wow bounceInUp">
                         <h5>Select a Caregiver</h5>
                         <p>Decydujesz na podstawie
@@ -127,7 +124,7 @@
                     <span class="wow zoomInLeft"></span>
                 </div>
                 <div class="row">
-                    <img src="img/icon-7.png" class="wow bounceInUp">
+                    <img src="img/icon-7.png" alt="time" class="wow bounceInUp">
                     <div class="wow bounceInUp">
                         <h5>Test Period</h5>
                         <p>Opiekun rozpoczyna okres próbny 
@@ -137,7 +134,7 @@
                     <span class="wow zoomInRight"></span>
                 </div>
                 <div class="row">
-                    <img src="img/icon-8.png" class="wow bounceInUp">
+                    <img src="img/icon-8.png" alt="money" class="wow bounceInUp">
                     <div class="wow bounceInUp">
                         <h5>Pay after Start</h5>
                         <p>Opiekun dostaje wynagrodzenie
@@ -150,84 +147,81 @@
             </div>
         </div>
     </section>
-    <section id="bg2" class="wow bounceInRight">
-        <div class="container"></div>
-    </section>
-    <section id="recalls">
+    <div class="bg2 wow bounceInRight">
+    </div>
+    <section class="recalls">
         <div class="container">
             <h3>What do our Clients Say?</h3>
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-1.jpg">
+                    <img src="img/face-1.jpg" alt="portrait">
                     <h5>Aneta, 39l</h5>
-                    <div class="descr">Service provider</div>
+                    <p>Service provider</p>
                 </div>
             </div>
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-2.jpg">
+                    <img src="img/face-2.jpg" alt="portrait">
                     <h5>Katarzyna, 51 lat</h5>
-                    <div class="descr">Client</div>
+                    <p>Client</p>
                 </div>
             </div>
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-1.jpg"> 
+                    <img src="img/face-1.jpg" alt="portrait"> 
                     <h5>Aneta, 39l</h5>
-                    <div class="descr">Service provider</div>
+                    <p>Service provider</p>
                 </div>
             </div>           
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-1.jpg">
+                    <img src="img/face-1.jpg" alt="portrait">
                     <h5>Aneta, 39l</h5>
-                    <div class="descr">Service provider</div>
+                    <p>Service provider</p>
                 </div>
             </div>
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-2.jpg">
+                    <img src="img/face-2.jpg" alt="portrait">
                     <h5>Katarzyna, 51 lat</h5>
-                    <div class="descr">Cleint</div>
+                    <p>Cleint</p>
                 </div>
             </div>
             <div class="profile wow bounceInUp">
-                <div class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
                         już zupełnie samodzielna. Sama przestałam dawac 
                         radę zajmować się własnym domem ..
-                </div>
+                </p>
                 <div class="info">
-                    <img src="img/face-1.jpg"> 
+                    <img src="img/face-1.jpg" alt="portrait"> 
                     <h5>Aneta, 39l</h5>
-                    <div class="descr">Service provider</div>
+                    <p>Service provider</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="bg3" class="wow bounceInLeft">
-        <div class="container"></div>
-    </section>
-    <section id="our-preferences">
+    <div class="bg3 wow bounceInLeft"></div>
+    <section class="our-preferences">
         <div class="container">
             <div class="left">
                 <p class="wow bounceInLeft">10,000 zarejestrowanych opiekunów czeka na bezpośredni 
@@ -253,7 +247,7 @@
             </div>
         </div>
     </section>
-    <section id="call-us" class="wow bounceInLeft">
+    <section class="call-us wow bounceInLeft">
         <div class="container">
             <h3>Chcesz wiedziedzieć więcej?</h3>
             <p>Odwiedź nasze centrum pomocy lub zadzwoń</p>
@@ -263,7 +257,7 @@
     <footer>
         <div class="container">
             <div class="col col-1">
-                <img src="img/logo-228.png">
+                <img src="img/logo-228.png" alt="logo">
                 <h4>Follow Us</h4>
                 <a href="#" class="socicon-facebook"></a>
                 <a href="#" class="socicon-twitter"></a>
@@ -271,18 +265,18 @@
                 <p>© 2018 Geriana. All rights reserved.</p>
             </div>
             <div class="col">
-                <h4>O portalu</h3>
+                <h4>O portalu</h4>
                 <a href="#">Kim jesteśmy</a><br>
                 <a href="#">O nas w mediach</a><br>
                 <a href="#">Zasady i regulaminy</a>
             </div>
             <div class="col">
-                <h4>Współpraca</h3>
+                <h4>Współpraca</h4>
                 <a href="#">Zostań naszym partnerem</a><br>
                 <a href="#">Praca</a>
             </div>
             <div class="col">
-                <h4>Centrum Pomocy</h3>
+                <h4>Centrum Pomocy</h4>
                 <a href="#">Opiekunowie</a><br>
                 <a href="#">Kontakt</a><br>
                 <a href="#">Poszukujący opieki</a>
