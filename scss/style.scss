@@ -45,10 +45,11 @@ header {
     &>.container {
         @extend %ct;
         width: 100%;
+        box-sizing: border-box;
         top: 0;
         height: 51px;
         display: flex;
-        padding: 25px 30px;
+        padding: 50px;
         justify-content: flex-start;
         align-items: center;
         &>.img {
@@ -57,10 +58,10 @@ header {
         &>.nav {
             margin-left: auto;
             ul {
-                padding-right: 50px;
                 display: inline;
                 .menu {
                     margin-left: 50px;
+                    cursor: pointer;
                 }
                 li {
                     display: inline-block;
@@ -125,12 +126,12 @@ header {
                 border-radius: 50%;
             }
         }
-        @media (max-width: 950px) {
+        @media (max-width: 985px) {
             .hide {
                 display: none !important;
             }
         }
-        @media (max-width: 570px) {
+        @media (max-width: 600px) {
             .hide1 {
                 display: none !important;
             }
@@ -140,9 +141,10 @@ header {
 
 .content {
     background:  linear-gradient(
+        rgba(23, 49, 83, 0.4),
         rgba(23, 49, 83, 0.4)
       ), url(../img/img-2.jpg) no-repeat 
-      top center / cover;
+      center center / cover;
     min-height: 100vh;  
     &>.container {
         @extend %ct;
@@ -277,9 +279,9 @@ header {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        padding: 95px 45px 115px 0;
+        padding: 95px 0;
         &>.left {
-            padding: 0 0 0 40px;
+            padding: 0 30px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -308,15 +310,16 @@ header {
                     border-color: $red;
                 }
             }
-            @media (max-width: 1365px) {
+            @media (max-width: 1300px) {
+                margin-bottom: 100px;
                 text-align: center;
                 align-items: center;
             }
         }
         &>.right {
-            margin: 95px 0;
+            margin: 0;
             flex: 1;
-            padding: 0 120px;
+            padding: 0 100px;
             &>.row {
                 height: 170px;
                 line-height: 1.3;
@@ -342,7 +345,6 @@ header {
                     margin: 5px 0 0 0;
                     max-width: 240px;
                 }
-                
                 span {
                     margin: 0;
                     top: 40px;
@@ -452,6 +454,8 @@ header {
         justify-content: space-around;
         align-items: baseline;
         h3 {
+            padding: 0;
+            margin: 0 0 20px 0;
             font-size: 36px;
             font-weight: 700;
             flex-basis: 100%;
@@ -472,13 +476,16 @@ header {
             }
             &>.info {
                 text-align: right;
+                display: flex;
+                justify-content: flex-end;
                 h5 {
                     margin: 0;
                     padding: 5px 0 0 0; 
                 }
                 img {
-                    padding-left: 10px; 
-                    float: right;
+                    padding-left: 0px; 
+                    border-radius: 50%;
+                    margin-left: 10px; 
                 }
             }
         }
@@ -489,21 +496,20 @@ header {
     background: #005173;
     .container {
         @extend %ct;
-        min-height: 100vh;
         color: $white;
         background: url(../img/logo-5.png) no-repeat bottom right;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding: 40px 0;
+        padding: 160px 0;
         &>.left {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 0 20px;
             p {
                 position: relative;
-                padding: 0 20px;
                 max-width: 485px;
                 line-height: 1.4;
                 margin: 40px 0 0 0;
@@ -512,7 +518,6 @@ header {
                     content: '';
                     position: absolute;
                     top: -5px;
-                    left: 20px;
                     display: block;
                     text-indent: -9999px;
                     height: 2px;
@@ -526,7 +531,8 @@ header {
             justify-content: center;
             align-items: flex-start;
             text-align: left;
-            margin: 0 15px;
+            margin: 0;
+            padding: 0 20px;
             h1 { 
                 margin-top: 0;
                 padding-top: 0;
@@ -543,6 +549,13 @@ header {
             a:hover {
                 background-color: $red;
                 border-color: $red;
+            }
+            @media (max-width: 1055px) {
+                text-align: center;
+                margin-top: 100px;
+                a {
+                    margin: 0 auto;
+                }
             }
         }
     }
@@ -599,8 +612,6 @@ footer {
         &>.col {
             min-width: 240px;
             box-sizing: border-box;
-            //margin: 25px 0;
-            //padding: 50px 25px 0 25px;
             flex: 1;
             h4 {
                 padding: 0 10px;
@@ -643,4 +654,40 @@ footer {
             }
         }
     }
+}
+
+.menu-on-click {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 100px;
+    background-color: $blue_dark;
+    width: 100%;
+    transition: all 0.5s;
+    &>.container {
+        @extend %ct;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul li {
+            list-style-type: none;
+            &>.item {
+                display: block;
+                text-align: center;
+                padding: 10px;
+                font-weight: 500;
+                padding: 20px 40px;
+                border: none;
+                border-radius: 0;
+                &:hover {
+                    color: $red;
+                } 
+            }
+        }
+        
+    }
+
 }
