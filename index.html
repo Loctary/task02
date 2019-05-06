@@ -12,12 +12,40 @@
 <body>
     <script>
         function changeCss () {
+            let item = document.querySelector('.menu-on-click');
             let bodyElement = document.getElementsByTagName('header')[0];
-            this.scrollY > 100 
+            this.scrollY > 100
             ? bodyElement.style.backgroundColor = '#0b2a37' 
-            : bodyElement.style.backgroundColor = 'transparent';
+            : getComputedStyle(item).display === 'none' 
+                ? bodyElement.style.backgroundColor = 'transparent'
+                : bodyElement.style.backgroundColor = '#0b2a37';
+        };
+        function menu () {
+            let bodyElement = document.querySelector('header');
+            let item = document.querySelector('.menu-on-click');
+            style = getComputedStyle(item);
+            if (style.display === 'none') {
+                item.style.display = 'unset';
+                item.style.opacity = '1';
+                bodyElement.style.backgroundColor = '#0b2a37';
+            } else menuOnClick();
+        };
+        function menuOnClick () {
+            let bodyElement = document.querySelector('header');
+            let item = document.querySelector('.menu-on-click');
+            item.style.opacity = '0';
+                setTimeout(function(){ 
+                    item.style.display = 'none';
+                    }, 500);
+                this.scrollY > 100
+                ? bodyElement.style.backgroundColor = '#0b2a37' 
+                : bodyElement.style.backgroundColor = 'transparent';
         };
         window.onscroll= () => changeCss();
+        window.onload = function(){ 
+            document.getElementsByClassName('menu')[0].onclick = () =>  menu();
+            document.getElementsByClassName('menu-on-click')[0].onclick = () =>  menuOnClick();
+        };
         new WOW().init();
     </script>
     <header>
@@ -29,231 +57,243 @@
                 <ul>
                     <li class="hide1"><a href="#" >Sign Up</a></li>
                     <li class="hide1"><a href="#" >Log In</a></li>
-                    <li class="menu"><a href="#"><div></div>Menu</a></li>
+                    <li class="menu"><a><div></div>Menu</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section class="content">
-        <div class="container">
-            <h1>Znajdź  opiekuna</h1>
-            <h2>dla swoich najbliższych</h2>
-            <p>Skontaktuj się bezpośrednio z jedną z <b>60,000 zarejestrowanych </b><br>opiekunek</p>
-            <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
-        </div>
-    </section>
-    <section class="search-top wow bounceInLeft">
-        <div class="container" >
-            <h4>Want to care with Geriana?</h4>
-            <a href="#">Become a Caregiver</a>
-        </div>
-    </section>
-    <section class="specialists">
-        <div class="container">
-            <h3>Specjaliści Różnych Kategorii</h3>
-            <div class="services">
-                <figure class="col wow bounceInUp">
-                    <img src="img/icon-1.png" alt="Opiekunowie z doświadczeniem">
-                    <figcaption>
-                        <h4>Opiekunowie z doświadczeniem</h4>
-                        <p>10,000 zarejestrowanych opiekunów<br> 
-                            czeka na bezpośredni kontakt<br> 
-                            z poszukującymi opieki</p>
-                    </figcaption>
-                </figure>
-                <figure class="col wow bounceInUp">
-                    <img src="img/icon-2.png" alt="Masażyści">
-                    <figcaption>
-                        <h4>Masażyści</h4>
-                        <p>10,000 zarejestrowanych opiekunów<br> 
-                            czeka na bezpośredni kontakt<br> 
-                            z poszukującymi opieki</p>
-                    </figcaption>
-                </figure>
-                <figure class="col wow bounceInUp">
-                    <img src="img/icon-3.png" alt="Pielęgniarki i opiekunowiemedyczni">
-                    <figcaption>
-                        <h4>Pielęgniarki i opiekunowie
-                                medyczni</h4>
-                        <p>10,000 zarejestrowanych opiekunów<br> 
-                            czeka na bezpośredni kontakt<br> 
-                            z poszukującymi opieki</p>
-                    </figcaption>
-                </figure>
-                <figure class="col wow bounceInUp">
-                    <img src="img/icon-4.png" alt="Fizjoterapeuci">
-                    <figcaption>
-                        <h4>Fizjoterapeuci</h4>
-                        <p>10,000 zarejestrowanych opiekunów<br> 
-                            czeka na bezpośredni kontakt<br> 
-                            z poszukującymi opieki</p>
-                    </figcaption>
-                </figure>
+    <main>
+        <section class="content">
+            <div class="container">
+                <h1>Znajdź  opiekuna</h1>
+                <h2>dla swoich najbliższych</h2>
+                <p>Skontaktuj się bezpośrednio z jedną z <b>60,000 zarejestrowanych </b><br>opiekunek</p>
+                <a href="#">ZNAJDŹ OPIEKUNKĘ</a>
             </div>
-        </div>
-    </section>
-    <div class="bg1 wow bounceInLeft">
-    </div>
-    <section class="how-it-works">
-        <div class="container">
-            <div class="left">
-                <h1 class="wow bounceInLeft">Jak Działamy dla Poszukujących Opieki</h1>
-                <a href="#" class="wow bounceInLeft">ZNAJDŹ OPIEKUNKĘ</a>
+        </section>
+        <section class="search-top wow bounceInLeft">
+            <div class="container" >
+                <h4>Want to care with Geriana?</h4>
+                <a href="#">Become a Caregiver</a>
             </div>
-            <div class="right">
-                <div class="row">
-                    <img src="img/icon-5.png " alt="zoom" class="wow bounceInUp">
-                    <div class="wow bounceInUp">
-                        <h5>Search a Caregiver</h5>
-                        <p>Ustalasz kryteria wyboru i 
-                                wyszukujesz opiekuna z 
-                                wymaganymi kwalifikacjami.</p>
+        </section>
+        <section id="s1" class="specialists">
+            <div class="container">
+                <h3>Specjaliści Różnych Kategorii</h3>
+                <div class="services">
+                    <figure class="col wow bounceInUp">
+                        <img src="img/icon-1.png" alt="Opiekunowie z doświadczeniem">
+                        <figcaption>
+                            <h4>Opiekunowie z doświadczeniem</h4>
+                            <p>10,000 zarejestrowanych opiekunów<br> 
+                                czeka na bezpośredni kontakt<br> 
+                                z poszukującymi opieki</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="col wow bounceInUp">
+                        <img src="img/icon-2.png" alt="Masażyści">
+                        <figcaption>
+                            <h4>Masażyści</h4>
+                            <p>10,000 zarejestrowanych opiekunów<br> 
+                                czeka na bezpośredni kontakt<br> 
+                                z poszukującymi opieki</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="col wow bounceInUp">
+                        <img src="img/icon-3.png" alt="Pielęgniarki i opiekunowiemedyczni">
+                        <figcaption>
+                            <h4>Pielęgniarki i opiekunowie
+                                    medyczni</h4>
+                            <p>10,000 zarejestrowanych opiekunów<br> 
+                                czeka na bezpośredni kontakt<br> 
+                                z poszukującymi opieki</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="col wow bounceInUp">
+                        <img src="img/icon-4.png" alt="Fizjoterapeuci">
+                        <figcaption>
+                            <h4>Fizjoterapeuci</h4>
+                            <p>10,000 zarejestrowanych opiekunów<br> 
+                                czeka na bezpośredni kontakt<br> 
+                                z poszukującymi opieki</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <div class="bg1 wow bounceInLeft"></div>
+        <section id="s2" class="how-it-works">
+            <div class="container">
+                <div class="left">
+                    <h1 class="wow bounceInLeft">Jak Działamy dla Poszukujących Opieki</h1>
+                    <a href="#" class="wow bounceInLeft">ZNAJDŹ OPIEKUNKĘ</a>
+                </div>
+                <div class="right">
+                    <div class="row">
+                        <img src="img/icon-5.png " alt="zoom" class="wow bounceInUp">
+                        <div class="wow bounceInUp">
+                            <h5>Search a Caregiver</h5>
+                            <p>Ustalasz kryteria wyboru i 
+                                    wyszukujesz opiekuna z 
+                                    wymaganymi kwalifikacjami.</p>
+                        </div>
+                        <span class="wow zoomInRight"></span>
                     </div>
-                    <span class="wow zoomInRight"></span>
-                </div>
-                <div class="row">
-                    <img src="img/icon-6.png" alt="arrow" class="wow bounceInUp">
-                    <div class="wow bounceInUp">
-                        <h5>Select a Caregiver</h5>
-                        <p>Decydujesz na podstawie
-                                weryfikacji profilu i opinii inyych
-                                osób o danej opiekunce.
-                                Nawiązujesz współpracę z
-                                wybraną osobą.</p>
+                    <div class="row">
+                        <img src="img/icon-6.png" alt="arrow" class="wow bounceInUp">
+                        <div class="wow bounceInUp">
+                            <h5>Select a Caregiver</h5>
+                            <p>Decydujesz na podstawie
+                                    weryfikacji profilu i opinii inyych
+                                    osób o danej opiekunce.
+                                    Nawiązujesz współpracę z
+                                    wybraną osobą.</p>
+                        </div>
+                        <span class="wow zoomInLeft"></span>
                     </div>
-                    <span class="wow zoomInLeft"></span>
-                </div>
-                <div class="row">
-                    <img src="img/icon-7.png" alt="time" class="wow bounceInUp">
-                    <div class="wow bounceInUp">
-                        <h5>Test Period</h5>
-                        <p>Opiekun rozpoczyna okres próbny 
-                                i jeśli jesteście zadowoleni, 
-                                zostaje na dłużej.</p>
+                    <div class="row">
+                        <img src="img/icon-7.png" alt="time" class="wow bounceInUp">
+                        <div class="wow bounceInUp">
+                            <h5>Test Period</h5>
+                            <p>Opiekun rozpoczyna okres próbny 
+                                    i jeśli jesteście zadowoleni, 
+                                    zostaje na dłużej.</p>
+                        </div>
+                        <span class="wow zoomInRight"></span>
                     </div>
-                    <span class="wow zoomInRight"></span>
-                </div>
-                <div class="row">
-                    <img src="img/icon-8.png" alt="money" class="wow bounceInUp">
-                    <div class="wow bounceInUp">
-                        <h5>Pay after Start</h5>
-                        <p>Opiekun dostaje wynagrodzenie
-                                dopiero po rozpoczęciu pracy. Po
-                                zakonczeniu współpracy
-                                wystawiasz opiekunowi opinię.</p>
+                    <div class="row">
+                        <img src="img/icon-8.png" alt="money" class="wow bounceInUp">
+                        <div class="wow bounceInUp">
+                            <h5>Pay after Start</h5>
+                            <p>Opiekun dostaje wynagrodzenie
+                                    dopiero po rozpoczęciu pracy. Po
+                                    zakonczeniu współpracy
+                                    wystawiasz opiekunowi opinię.</p>
+                        </div>
+                        <span></span>
                     </div>
-                    <span></span>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="bg2 wow bounceInRight">
-    </div>
-    <section class="recalls">
-        <div class="container">
-            <h3>What do our Clients Say?</h3>
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-1.jpg" alt="portrait">
-                    <h5>Aneta, 39l</h5>
-                    <p>Service provider</p>
+        </section>
+        <div class="bg2 wow bounceInRight"></div>
+        <section id="s3" class="recalls">
+            <div class="container">
+                <h3>What do our Clients Say?</h3>
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Aneta, 39l</h5>
+                            <p>Service provider</p>
+                        </div>
+                        <img src="img/face-1.jpg" alt="portrait">
+                    </div>
+                </div>
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Katarzyna, 51 lat</h5>
+                            <p>Client</p>
+                        </div>
+                        <img src="img/face-2.jpg" alt="portrait">
+                    </div>
+                </div>
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Aneta, 39l</h5>
+                            <p>Service provider</p>
+                        </div>
+                        <img src="img/face-1.jpg" alt="portrait">
+                    </div>
+                </div>           
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Aneta, 39l</h5>
+                            <p>Service provider</p>
+                        </div>
+                        <img src="img/face-1.jpg" alt="portrait">
+                    </div>
+                </div>
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Katarzyna, 51 lat</h5>
+                            <p>Client</p>
+                        </div>
+                        <img src="img/face-2.jpg" alt="portrait">
+                    </div>
+                </div>
+                <div class="profile wow bounceInUp">
+                    <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
+                            już zupełnie samodzielna. Sama przestałam dawac 
+                            radę zajmować się własnym domem ..
+                    </p>
+                    <div class="info">
+                        <div>
+                            <h5>Aneta, 39l</h5>
+                            <p>Service provider</p>
+                        </div>
+                        <img src="img/face-1.jpg" alt="portrait">   
+                    </div>
                 </div>
             </div>
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-2.jpg" alt="portrait">
-                    <h5>Katarzyna, 51 lat</h5>
-                    <p>Client</p>
+        </section>
+        <div class="bg3 wow bounceInLeft"></div>
+        <section id="s4" class="our-preferences">
+            <div class="container">
+                <div class="left">
+                    <p class="wow bounceInLeft">10,000 zarejestrowanych opiekunów czeka na bezpośredni 
+                            kontakt  z poszukującymi opieki</p>
+                    <p class="wow bounceInLeft">Gwarantujemy bezpieczeństwo przelewów pieniężnych oraz 
+                            zapłatę za pracę, kontrakt reguluje współpracę.</p>
+                    <p class="wow bounceInLeft">Nie jesteśmy agencją. Nasza prowizja to jedynie 10% od ceny 
+                            opieki pobierane od klienta. Dla opiekunek portal jest darmowy.</p>
+                    <p class="wow bounceInLeft">Samemu określasz długość płatnego okresu próbnego i okresu 
+                            wypowiedzenia</p>
+                    <p class="wow bounceInLeft">Oferujemy usługi dodatkowe: ubezpieczenie i assistance 24h 
+                            poprzez konsultantów w Help Center oraz rabaty na kursy 
+                            językowe i szkolenia opiekunów</p>
+                    <p class="wow bounceInLeft">Pewność kogo zatrudniasz: przeprowadzamy interview pod kątem 
+                            jezyków obcych, sprawdzamy referencje i ukończone dyplomy. 
+                            Dodatkowo po każdej pracy wystawiane są opinie, także 
+                            wybierając opiekuna bazujesz na doświadczeniach innych z 
+                            wybraną osobą.</p>
+                </div>
+                <div class="right">
+                    <h1 class="wow bounceInRight">Nasze Mocne Strony</h1>
+                    <a href="#" class="wow bounceInRight">ZNAJDŹ OPIEKUNKĘ</a>
                 </div>
             </div>
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-1.jpg" alt="portrait"> 
-                    <h5>Aneta, 39l</h5>
-                    <p>Service provider</p>
-                </div>
-            </div>           
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-1.jpg" alt="portrait">
-                    <h5>Aneta, 39l</h5>
-                    <p>Service provider</p>
-                </div>
+        </section>
+        <section class="call-us wow bounceInLeft">
+            <div class="container">
+                <h3>Chcesz wiedziedzieć więcej?</h3>
+                <p>Odwiedź nasze centrum pomocy lub zadzwoń</p>
+                <a href="tel:+48567365485">Call +48 567 365 485</a>
             </div>
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-2.jpg" alt="portrait">
-                    <h5>Katarzyna, 51 lat</h5>
-                    <p>Cleint</p>
-                </div>
-            </div>
-            <div class="profile wow bounceInUp">
-                <p class="descr">Moja mama zachorowała jakiś czas temu i nie jest 
-                        już zupełnie samodzielna. Sama przestałam dawac 
-                        radę zajmować się własnym domem ..
-                </p>
-                <div class="info">
-                    <img src="img/face-1.jpg" alt="portrait"> 
-                    <h5>Aneta, 39l</h5>
-                    <p>Service provider</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="bg3 wow bounceInLeft"></div>
-    <section class="our-preferences">
-        <div class="container">
-            <div class="left">
-                <p class="wow bounceInLeft">10,000 zarejestrowanych opiekunów czeka na bezpośredni 
-                        kontakt  z poszukującymi opieki</p>
-                <p class="wow bounceInLeft">Gwarantujemy bezpieczeństwo przelewów pieniężnych oraz 
-                        zapłatę za pracę, kontrakt reguluje współpracę.</p>
-                <p class="wow bounceInLeft">Nie jesteśmy agencją. Nasza prowizja to jedynie 10% od ceny 
-                        opieki pobierane od klienta. Dla opiekunek portal jest darmowy.</p>
-                <p class="wow bounceInLeft">Samemu określasz długość płatnego okresu próbnego i okresu 
-                        wypowiedzenia</p>
-                <p class="wow bounceInLeft">Oferujemy usługi dodatkowe: ubezpieczenie i assistance 24h 
-                        poprzez konsultantów w Help Center oraz rabaty na kursy 
-                        językowe i szkolenia opiekunów</p>
-                <p class="wow bounceInLeft">Pewność kogo zatrudniasz: przeprowadzamy interview pod kątem 
-                        jezyków obcych, sprawdzamy referencje i ukończone dyplomy. 
-                        Dodatkowo po każdej pracy wystawiane są opinie, także 
-                        wybierając opiekuna bazujesz na doświadczeniach innych z 
-                        wybraną osobą.</p>
-            </div>
-            <div class="right">
-                <h1 class="wow bounceInRight">Nasze Mocne Strony</h1>
-                <a href="#" class="wow bounceInRight">ZNAJDŹ OPIEKUNKĘ</a>
-            </div>
-        </div>
-    </section>
-    <section class="call-us wow bounceInLeft">
-        <div class="container">
-            <h3>Chcesz wiedziedzieć więcej?</h3>
-            <p>Odwiedź nasze centrum pomocy lub zadzwoń</p>
-            <a href="#">Call +48 567 365 485</a>
-        </div>
-    </section>
+        </section>
+    </main>
     <footer>
         <div class="container">
             <div class="col col-1">
@@ -283,5 +323,15 @@
             </div>
         </div>
     </footer>
+    <div class="menu-on-click">
+        <div class="container">
+            <ul>
+                <li><a href="#s1" class="item">Specjaliści Różnych Kategorii</a></li>
+                <li><a href="#s2" class="item">Jak Działamy dla Poszukujących Opieki</a></li>
+                <li><a href="#s3" class="item">What do our Clients Say?</a></li>
+                <li><a href="#s4" class="item">Nasze Mocne Strony</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
